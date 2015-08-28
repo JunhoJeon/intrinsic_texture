@@ -1,4 +1,4 @@
-# intrinsic_texture
+# Intrinsic Images using Texture Filtering
 Unoptimized implementation of <b>"Intrinsic Image Decomposition Using Structure-Texture Separation and Surface Normals"</b> in Matlab and C++ MEX.
 
 ## How to use it
