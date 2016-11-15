@@ -13,7 +13,7 @@ You can use any structure-texture separation algorithm instead of it.
 3. To compile mex source codes, corresponding <b>ann</b> and <b>opencv</b> library is required (please refer the compile.m).
 
 ## Contributors
-[Junho Jeon](https://sites.google.com/site/zwitterion27/) (zwitterion27@postech.ac.kr)
+[Junho Jeon](http://junhojeon.github.io/) (zwitterion27@postech.ac.kr)
 
 ## Citation
 Cite our papers if you find this software useful.<br>
