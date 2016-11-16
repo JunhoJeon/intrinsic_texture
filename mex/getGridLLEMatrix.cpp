@@ -14,8 +14,8 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 	double *vMap = mxGetPr(prhs[1]); // variance Map
 	int g_size = mxGetPr(prhs[4])[0];
 
-	int ngrid_w = img_w / g_size;
-	int ngrid_h = img_h / g_size;
+	int ngrid_w = ceil(img_w / (float)g_size);
+	int ngrid_h = ceil(img_h / (float)g_size);
 	int Ngrid = ngrid_w * ngrid_h;
 	int *x_pos = new int[Ngrid];
 	int *y_pos = new int[Ngrid];
@@ -24,8 +24,8 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 	for(int j=0, n=0;j<img_h;j+=g_size) { // grid iteration
 		for(int i=0;i<img_w;i+=g_size) {
 			double vmin = 99999;
-			for(int gj=0;gj<g_size;gj++) { // y pos in grid
-				for(int gi=0;gi<g_size;gi++) { // x pos
+			for(int gj=0;gj<g_size && j+gj < img_h;gj++) { // y pos in grid
+				for(int gi=0;gi<g_size && i+gi < img_w;gi++) { // x pos
 					double var = vMap[(i+gi)*img_h + (j+gj)];
 					if(var < vmin) {
 						vmin = var;

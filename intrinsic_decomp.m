@@ -97,8 +97,7 @@ addpath('mex', 'utils');            % basic utilities
     mk = zeros(N, 1);
     mk(nNeighbors2(:, 1)) = 1;
     mask2 = spdiags(mk, 0, N, N); % Subsampling mask for non-local LLE
-    
-    A = 4 * WRC + 1 * mask * (spI - LLEGRID) + 1 * mask2 * (spI - LLENORMAL) + 1 * L_S + 0.025 * WSC;
+    A = 4 * WRC + 3 * mask * (spI - LLEGRID) + 3 * mask2 * (spI - LLENORMAL) + 1 * L_S + 0.025 * WSC;
     b = 4 * consVecCont;
     disp('Optimizing the system...');
     newS = pcg(A, b, 1e-3, 10000, [], []);
