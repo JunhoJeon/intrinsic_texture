@@ -27,7 +27,8 @@ void pushSparseMatrix(CvSparseMat *tcm, char* matName)
 	mexPutVariable("caller", "consMat", mArray);
 	int pixCnt = tcm->size[0];
 	char buffer[512];
-	sprintf_s(buffer,"%s = sparse(consMat(1,:)+1,consMat(2,:)+1,consMat(3,:),%d,%d);", matName, pixCnt,pixCnt);
+	//sprintf_s(buffer,"%s = sparse(consMat(1,:)+1,consMat(2,:)+1,consMat(3,:),%d,%d);", matName, pixCnt,pixCnt);
+    sprintf(buffer,"%s = sparse(consMat(1,:)+1,consMat(2,:)+1,consMat(3,:),%d,%d);", matName, pixCnt,pixCnt);
 	mexEvalString(buffer);
 	delete [] mData;
 	mxDestroyArray(mArray);	

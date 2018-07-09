@@ -1,9 +1,9 @@
-addpath('filtering\\RGF');                     % rolling guidance filter
-addpath('filtering\\regcovsmooth');            % region covariance filter
+addpath('filtering/RGF');                     % rolling guidance filter
+addpath('filtering/regcovsmooth');            % region covariance filter
 
 % Read Data & Preprocessing (Structure-texture separation)
-I = im2double(imread('images\\image0171.png'));
-depth = double(imread('images\\raw_depth0171.png'))/1000.0;
+I = im2double(imread('images/image0171.png'));
+depth = double(imread('images/raw_depth0171.png'))/1000.0;
 %depth(:) = 0;
 % I = im2double(imread('image0001.png'));
 % load('Z0001.mat');

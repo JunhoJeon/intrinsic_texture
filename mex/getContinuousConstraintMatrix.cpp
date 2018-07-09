@@ -58,7 +58,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 				if(k == 2)
 					mxGetPr(plhs[1])[p] = weight;
 
-				if(_isnan(weight)) weight = 0;
+				if(std::isnan(weight)) weight = 0;
 				((float*)cvPtr2D(m_refConsMat, p, p))[0] += weight;
 				((float*)cvPtr2D(m_refConsMat, q, q))[0] += weight;
 				((float*)cvPtr2D(m_refConsMat, p, q))[0] += -weight;
